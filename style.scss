@@ -1,0 +1,3799 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin para-style{
+  font-size:1.4em;
+  color:#5E6E85;
+  line-height:1.4;
+  // display: -webkit-box;
+  // -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 5;
+  // overflow: hidden;
+  // text-overflow:ellipsis;
+  
+}
+
+
+@mixin card-style{
+  .gender{
+    width: 85%;
+    min-height: 80%;
+   // margin-top: 5px;
+    border-radius: 10px;
+    position: relative;
+    .gender-inner{
+      //padding:3% 8% 8% 8%;
+    min-height: 100%;
+      .gender-head{
+        display: flex;
+        gap:0px 10px;
+        margin-bottom: 5px;
+      }
+      p{
+        @include para-style();
+      //  padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@mixin box-style{
+  box-shadow: 15px 10px 20px 15px rgb(234,240,246);//20
+  border-radius: 15px;
+  border: 1px solid rgb(230, 230, 231);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('starter-code/assets/fonts/Inter-VariableFont_slnt\,wght.ttf') ;
+  }
+  
+  body {
+    font-size: 12px;
+    font-family: 'Inter-SemiBold', sans-serif; 
+    
+
+  }
+
+  .container{
+        max-width: 1440px;
+       // min-height:3500px;
+       // background-color: red;
+        display: grid;
+    
+        justify-items: center;
+        header{
+            width: 98%;
+            height: 737px;
+            //background-color:beige;
+            .head-container{
+              //max-width: 1276px; 
+             // background-color: #345FF6;
+              width: 100%;
+              height: inherit;
+              display: grid;
+              grid-template-columns: repeat(20,1fr);
+
+              //grid-template-columns: 70% 25%;
+              
+              .first-header{
+                background: linear-gradient(135deg,  rgb(251, 253, 254) 0%,rgb(245, 254, 255) 20%,
+                rgb(238, 249, 252) 40%, 
+                rgba(232,247,254) 60%,  rgba(225,241,254) 80%, rgba(212,230,250) 100%);
+                border-radius: 0px 0px 35px 35px;
+                position: relative;
+                grid-column: 1/15;
+                display: grid;
+                grid-template-columns: repeat(80,1fr);
+                
+                .header-content-wrapper{
+                  grid-column: 11/52;
+                
+                  height: 400px;
+              //    background-color: aqua;
+                  margin: 14.6% 0 0 0%;
+                  
+                    .circle{
+                        margin-bottom:125px;
+                    }
+                    .header-content{
+                    
+                      h1{
+                         
+                          line-height:1.2;
+                          margin-bottom: 30px;
+                          font-size: 5.2em;
+                      }
+                      .first-paragraph{
+                        width: 100%;
+                        p{
+                          @include para-style();
+                         
+                        }
+                      }
+                    }
+                }
+                .calculator{                
+                  grid-column: 59/80;
+                  width:216% ;
+                  min-height: 400px; //484
+                  background-color: white;
+                  position: absolute;
+                  //left:65%;
+                  top: 24.5%;
+                  display: grid;
+                  justify-items: center;
+                  align-items: center;
+                  border-radius: 15px;
+                  border: 1px solid rgb(230, 230, 231);
+                  box-shadow: 15px 10px 20px 5px rgba(210,227,250,0.4);
+                  .calculator-wrapper{
+                    width: 88%;
+                    min-height: 89%;
+                    background-color:rgb(254, 254, 254);
+                    display: flex;
+                    margin:23px 0px 25px 0px;
+                    .details{
+                      position: relative;
+                      min-width:100%;
+                      min-height: 400px;
+                      padding-top: 10px;
+                     //background-color: bisque;
+                        h3{
+                          font-size: 1.7em;
+                        }
+  
+                        .radio-list{
+                          width: 73%;
+                          height: 25px;
+                         // background-color: aqua;
+                          display: flex;
+                          justify-content:space-between;
+                          align-items: center;
+                          margin-top:35px;
+                          .custom-radio-label {
+                            position: relative;
+                            cursor: pointer;
+                            display: flex;
+                            height: 25px;
+                            width: 100px;
+                            justify-items: start;
+                            align-items: center;
+                            input[type="radio"] {
+                              display: none;  //opacity: 0; also can. but it's space still there.
+                              cursor: pointer;
+                          }
+                          .custom-radio {
+                            height: 25px; 
+                            width: 25px; 
+                            border: 1px solid #ccc;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                           
+                          }
+                          .custom-radio:hover{
+                                  border: 1px solid #345FF6;
+                              }
+                            .custom-radio::before{
+                              position: absolute;
+                              content: "";
+                              height: 10px;
+                              width:10px;
+                           
+                              border-radius: 50%;
+                            }
+  
+                           
+                            .label-text{
+                                    font-size: 1.3em;
+                                    position: relative;
+                                    cursor: pointer;
+                                    font-weight: bold;
+                                  }
+                                 
+                        input[type="radio"]:checked + .custom-radio::before {
+                          background-color: #345FF6; /* Change the color when checked */
+                          border: 1px solid #345FF6; /* Change the color of the border when checked */
+                          box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                         }
+                  
+                        }
+                      }
+                        .body-measure{
+                          display:flex;
+                          justify-content: space-between;
+                          margin: 35px 0px 4px 0px;
+                          width: 100%;
+                          gap:0px 20px;
+                          .input-wrapper{
+                            width: 100%;
+                            height: 105px;
+                            //background-color: aquamarine;
+                            
+                            .hei-wei{
+                              font-size: 1.4em;
+                              color:#5E6E85;
+                           
+                            }
+  
+                            .input-boxes{
+                              display: flex;
+                              position: relative;
+                              width:100%;
+                              height: 69px;
+                              //background-color: black;
+                              align-items: center;
+                              padding: 25px 0px 10px 0px;
+                              .body-input{
+                                width: 100%;
+                                height: 69px;
+                                border-radius:12px;
+                                border: 1px solid rgb(216, 226, 231);
+                                padding-left:10%;
+                                font-size: 2em;
+                                outline:0;
+                              }
+                              .body-input:hover {
+                                border: 1.5px solid #345FFE;
+                            }
+                            
+                              .icon{
+                                position: absolute;
+                                right:0;
+                                font-size: 2em;
+                                color: #345FF6;
+                                padding-right: 10%;
+                              }
+                            }
+                          }
+                             
+                        }
+                        .error{   
+                           height:20px;
+                           width: 100%;
+                           visibility: hidden;
+                           p{
+                            letter-spacing: 0.5px;
+                            padding-left: 3%;
+                            color: red;
+                           }
+                           
+                        
+                        }
+                        .first-welcome-box{
+                          width: 100%;
+                          height: 130px;
+                          background-color: #345FF6;
+                          border-radius: 10px 80px 80px 10px;
+                          display:flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin-top: 10px 0px 0px 0px;
+                          
+                          .welcome-box1{
+                            width: 85%;
+                            height: 85px;
+                            display: grid;
+                            align-items: center;
+                            //background-color: #ccc;
+                            color:white;
+                            h3{
+                              //margin-top: 7px;
+                              margin-bottom: 20px;
+                              padding-top: 10px;
+                            }
+                            p{
+                              font-size: 1.2em;
+                            }
+                          }
+                        
+                        }
+                        .snd-welcome-box{
+                          width: 100%;
+                          height: 130px;
+                          background-color: #345FF6;
+                          border-radius: 10px 80px 80px 10px;
+                          display:none;  
+                          justify-content: center;
+                          align-items: center;
+                          margin-top: 10px;
+                          .welcome-box2{
+                            width: 90%;
+                            height: 80px;
+                            //background-color: #ccc;
+                            display: flex;
+                            color:white;
+                            .bmi-result{
+                              width: 50%;
+                              label{
+                                margin-top: 7x;
+                                height: 25%;
+                                font-size: 1.2em;
+                                display:block;
+                                font-weight: bold;
+                              }
+                              .result-box{
+                                margin-top: 10px;
+                                width: 70%;
+                                height: 75%;      
+                               // background-color: aqua;
+                                display: flex;
+                                align-items: end;
+                                span {
+                                  font-size: 5em;
+                                  height:100%;
+                                  width: 100%;
+                                  //background-color: beige;
+                                  display: flex;
+                                  align-items: end;
+                                 // justify-content: center;
+                                  line-height: 50px; /* Adjust this value based on your container height */
+                                  overflow: hidden;
+                              }
+                              }
+                            }
+                            .bmi-info{
+                              width: 50%;
+                             // background-color: antiquewhite;
+                              display: flex;
+                              align-items: end;
+                              .bmi-suggest{
+                                width:85%;
+                                height: 90%;
+                               // background-color: aqua;
+                                p{
+                                  font-size: 1.2em;
+                                  line-height: 1.4;
+                                }
+                              }
+                            }
+                            
+                           
+                          }
+                        }
+                    }
+                        
+                  }
+                  .calculator-wrapper1{
+                    width: 88%;
+                    min-height: 89%;
+                    background-color:rgb(254, 254, 254);
+                    display: none;
+                    .details{
+                      position: relative;
+                      min-width:100%;
+                      min-height: 400px;
+                      padding-top: 10px;
+                     //background-color: bisque;
+                        h3{
+                          font-size: 1.7em;
+                        }
+  
+                        .radio-list{
+                          width: 73%;
+                          height: 25px;
+                         // background-color: aqua;
+                          display: flex;
+                          justify-content:space-between;
+                          align-items: center;
+                          margin-top:35px;
+                          .custom-radio-label {
+                            position: relative;
+                            cursor: pointer;
+                            display: flex;
+                            height: 25px;
+                            width: 100px;
+                            justify-items: start;
+                            align-items: center;
+                            input[type="radio"] {
+                              display: none;  //opacity: 0; also can. but it's space still there.
+                              cursor: pointer;
+                          }
+                          .custom-radio {
+                            height: 25px; 
+                            width: 25px; 
+                            border: 1px solid #ccc;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                           
+                          }
+                          .custom-radio:hover{
+                                  border: 1px solid #345FF6;
+                              }
+                            .custom-radio::before{
+                              position: absolute;
+                              content: "";
+                              height: 10px;
+                              width:10px;
+                              border-radius: 50%;
+                            }
+  
+                           
+                            .label-text{
+                                    font-size: 1.3em;
+                                    position: relative;
+                                    cursor: pointer;
+                                    font-weight: bold;
+                                  }
+                                 
+                        input[type="radio"]:checked + .custom-radio::before {
+                          background-color: #345FF6; /* Change the color when checked */
+                          border: 1px solid #345FF6; /* Change the color of the border when checked */
+                          box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                         }
+                  
+                        }
+                      }
+                        .body-measure{
+                          display:flex;
+                          justify-content: space-between;
+                          margin-top: 10px;
+                          width: 100%;
+                          gap:0px 20px;
+                          .input-wrapper{
+                            width: 100%;
+                            height: 125px;
+                            //background-color: aquamarine;
+                            
+                            .hei-wei{
+                              font-size: 1.4em;
+                              color:#5E6E85;
+                           
+                            }
+  
+                            .input-boxes{
+                              display: flex;
+                              position: relative;
+                              width:100%;
+                              height: 69px;
+                              //background-color: black;
+                              align-items: center;
+                              padding: 25px 0px 10px 0px;
+                              .body-input{
+                                width: 100%;
+                                height: 69px;
+                                border-radius:12px;
+                                border: 1px solid rgb(216, 226, 231);
+                                padding-left:10%;
+                                font-size: 2em;
+                                outline:0;
+                              }
+                              .body-input:hover {
+                                border: 1.5px solid #345FFE;
+                            }
+                            
+                              .icon{
+                                position: absolute;
+                                right:0;
+                                font-size: 2em;
+                                color: #345FF6;
+                                padding-right: 10%;
+                              }
+                            }
+                          }
+                             
+                        }
+                    
+                          .error{   
+                            height:20px;
+                            width: 100%;
+                            visibility: hidden;
+                        
+                            p{
+                             letter-spacing: 0.5px;
+                             padding-left: 3%;
+                             color: red;
+                            }
+                            
+                         
+                         
+                        }
+                        .first-welcome-box{
+                         
+                          width: 100%;
+                          height: 130px;
+                          background-color: #345FF6;
+                          border-radius: 10px 80px 80px 10px;
+                          display:flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin:5px 0px 20px 0px;
+                   
+                          .welcome-box1{
+                            width: 85%;
+                            height: 85px;
+                            display: grid;
+                            align-items: center;
+                            //background-color: #ccc;
+                            color:white;
+                           
+                            h3{
+                              //margin-top: 7px;
+                              margin-bottom: 20px;
+                              padding-top: 10px;
+                            }
+                            p{
+                              font-size: 1.2em;
+                            }
+                          }
+                        
+                        }
+                        .snd-welcome-box{
+                          width: 100%;
+                          height: 166px;
+                          background-color: #345FF6;
+                          border-radius: 10px 80px 80px 10px;
+                          display:none; //flex  
+                          justify-content: center;
+                          align-items: center;
+                          margin:10px 0px 30px 0px;
+                          .welcome-box2{
+                            width: 86%;
+                            height: 80px;
+                            //background-color: #ccc;
+                            display: flex;
+                            color:white;
+                            .bmi-result{
+                              width: 50%;
+                              label{
+                                margin-top: 7x;
+                                height: 25%;
+                                font-size: 1.2em;
+                                display:block;
+                                font-weight: bold;
+                              }
+                              .result-box{
+                                margin-top: 10px;
+                                width: 100%;
+                                height: 75%;      
+                               // background-color: aqua;
+                                display: flex;
+                                align-items: end;
+                                span {
+                                  font-size: 5em;
+                                  height:100%;
+                                  width: 100%;
+                                  //background-color: beige;
+                                  display: flex;
+                                  align-items: end;
+                                 // justify-content: center;
+                                  line-height: 50px; /* Adjust this value based on your container height */
+                                 // overflow: hidden;
+                              }
+                              }
+                            }
+                            .bmi-info{
+                              width: 50%;
+                             // background-color: antiquewhite;
+                              display: flex;
+                              align-items: end;
+                              .bmi-suggest{
+                                width:85%;
+                                height: 90%;
+                               // background-color: aqua;
+                                p{
+                                  font-size: 1.2em;
+                                  line-height: 1.4;
+                                }
+                              }
+                            }
+                            
+                           
+                          }
+                        }
+                    }
+                        
+                  }
+                }
+                
+              }
+             
+            }
+        }
+        main{
+          
+          width: 98%;
+          height: 533px;
+         // background-color: aqua;
+          display: grid;
+          justify-items: center;
+          gap:60px 0px;
+          margin-top: 60px;
+         position: relative;
+          .first-main-content{
+            width: 82%;
+            min-height: 533px;
+            display: flex;
+          //  background-color: #a6adca;
+            gap:0px 10%;
+            position: relative;
+            margin-top: 5px;
+            .fig-maneat{
+              width:50%;
+              height: 100%;
+              display: grid;
+              align-items: end;
+              img{
+               width: 100%;
+               height: 100.5%;
+              }
+            }
+            .curved-line-left{
+              position:absolute;
+              right:2.5%;
+              top:-10%;
+              
+            }
+            .bmi-means{
+             width: 45%;
+            
+            display: flex;
+            align-items: end;
+            padding-left: 2.5%;
+            
+             .bmi-mean-box{
+              position: relative;
+              height: 65%;
+            
+              h1{
+                font-size: 4em;
+                line-height: 1.1;
+                margin-bottom: 35px;
+                letter-spacing:-2px;
+             }
+             p{
+              font-size:1.4em;
+              color:#5E6E85;
+              line-height:1.4;
+              padding:0px 10px 30px 0px;
+             }
+             }
+             
+            }
+          }
+
+          .snd-main-content{
+            height: 402px;
+            width: 98%;
+           background-color: rgb(246,250,255);
+           border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+              .list-todo{
+                width: 85%;
+                height: 234px;
+              //  background-color: aquamarine;
+                display: flex;
+                gap:0px 40px;
+                padding-left: 0px;
+                .healthy{
+                  display:grid;
+                  gap:0px 0px;
+                 
+                  h1{
+                    font-size: 2em;
+                    margin:35px 0px 25px 0px;
+                  }
+                  p{
+                    height: 110%;
+                    @include para-style();
+                  }
+                }
+                .healthy:last-child{
+                  p{
+                    padding-right: 10%;
+                  }
+                }
+              }
+          }
+
+          .third-main-content{
+            height: 704px;
+            width: 98%;
+           // background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            margin: 70px 0px 0px 0px;
+
+            .limit-container{
+              position: relative;
+                width: 84%;
+                min-height: 704px;
+              //  background-color: rgb(103, 195, 195);
+               // padding-bottom: 0px;
+                display: grid;
+                grid-template-columns: repeat(60, 1fr);
+                grid-template-rows: repeat(90,1fr);
+                .curved-line-right{
+                  position:absolute;
+                  left:15%;
+                  left:15%;
+                  top:38%;                
+                }
+                .limitation-bmi{
+                  grid-column: 1/27;
+                  grid-row: 1/28;
+                .limitation-box{
+                  width: 100%;
+                  h2{
+                    font-size: 3.6em;
+                    font-weight: bold;
+                  }
+                  p{
+                    margin-top: 40px;
+                    @include para-style();
+                  }
+                }
+                }
+                .gender-box{
+                  @include box-style();
+                  grid-column: 37/56;
+                  grid-row:3/31;
+                  display: grid;
+              
+                    @include card-style();
+                  //margin-top: 20px;
+                }
+                .age-box{
+                  @include box-style();
+                  grid-column: 21/40;
+                  grid-row:34/58;
+                  display: grid;
+                    @include card-style();
+                  //margin-top: 20px;
+                }
+                
+                .muscle-box{
+                  @include box-style();
+                  grid-column: 42/61;
+                  grid-row:34/58;
+                  display: grid;
+                    @include card-style();
+                  //margin-top: 20px;
+                }
+                .pregnancy-box{
+                  @include box-style();
+                  grid-column: 11/30;
+                  grid-row:61/91;
+                  display: grid;
+                    @include card-style();
+                  //margin-top: 20px;
+                }
+                .race-box{
+                  @include box-style();
+                  grid-column: 32/51;
+                  grid-row:61/91;
+                  display: grid;
+               
+                    @include card-style();
+                  //margin-top: 20px;
+                }
+            }
+          }
+         
+        }
+        .footer{
+         
+          position: relative;
+          width: 100%;
+          height: 80px;
+          background-color:white;
+          display: hidden;
+        }
+        
+  }
+
+  @media screen and  (max-width: 1024px) {
+
+    .container{
+      header{
+        width: 100%;
+        height: 850px;
+     // background-color: red;
+   
+
+        .head-container{
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-items: center;
+          .first-header{
+            width: 100%;
+            position: relative;
+            grid-column: 1/2;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            height: 81%;
+            .header-content-wrapper{
+              grid-column: 1/2;
+              justify-items: center;
+              width: 90%;
+              height: 302px;
+              margin: 5% 0 0 0%;
+              
+                .circle{
+                    margin-bottom:40px;
+                    display: grid;
+                    justify-content: center;
+                }
+                .header-content{
+                  display: grid;
+                  justify-items: center;
+                  h1{
+                     
+                      line-height:1.2;
+                      margin-bottom: 30px;
+                      text-align: center;
+                      font-size: 3.5em;
+                  }
+                  .first-paragraph{
+                    width: 100%;
+                    p{
+                      @include para-style();
+                     text-align: center;
+                    }
+                  }
+                }
+            }
+            .calculator{                
+              grid-column: 1/2;
+              width:90% ;
+              height: 450px; //484
+              background-color: white;
+              position:relative;
+              //left:65%;
+              top:0%;
+              display: grid;
+              justify-items: center;
+              align-items: center;
+              margin-top: 40px;
+               .calculator-wrapper{
+                width: 88%;
+                min-height: 89%;
+                background-color:rgb(254, 254, 254);
+                display:flex; 
+                margin:23px 0px 25px 0px;
+                .details{
+                  position: relative;
+                  min-width:100%;
+                  min-height: 400px;
+                  padding-top: 10px;
+                 //background-color: bisque;
+                    h3{
+                      font-size: 1.7em;
+                    }
+
+                    .radio-list{
+                      width: 67%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:35px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: start;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                      }
+                      .custom-radio {
+                        height: 25px; 
+                        width: 25px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                       
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1.3em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:flex;
+                      justify-content: space-between;
+                      margin: 35px 0px 4px 0px;
+                      width: 100%;
+                      gap:0px 20px;
+                      .input-wrapper{
+                        width: 100%;
+                        height: 105px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 69px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 69px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                    .error{   
+                       height:20px;
+                       width: 100%;
+                       visibility: hidden;
+                       p{
+                        letter-spacing: 0.5px;
+                        padding-left: 3%;
+                        color: red;
+                       }
+                       
+                    
+                    }
+                    .first-welcome-box{
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-top: 10px 0px 0px 0px;
+                      
+                      .welcome-box1{
+                        width: 85%;
+                        height: 85px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 20px;
+                          padding-top: 10px;
+                        }
+                        p{
+                          font-size: 1.2em;
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:none;  
+                      justify-content: center;
+                      align-items: center;
+                      margin-top: 10px;
+                      .welcome-box2{
+                        width: 90%;
+                        height: 80px;
+                        //background-color: #ccc;
+                        display: flex;
+                        color:white;
+                        .bmi-result{
+                          width: 50%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 70%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: end;
+                            span {
+                              font-size: 5em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                              overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 50%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+              .calculator-wrapper1{
+                width: 88%;
+                min-height: 89%;
+                background-color:rgb(254, 254, 254);
+                display: none;
+                .details{
+                  position: relative;
+                  min-width:100%;
+                  min-height: 400px;
+                  padding-top: 10px;
+                 //background-color: bisque;
+                    h3{
+                      font-size: 1.7em;
+                    }
+
+                    .radio-list{
+                      width: 73%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:35px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: start;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                      }
+                      .custom-radio {
+                        height: 25px; 
+                        width: 25px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1.3em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:flex;
+                      justify-content: space-between;
+                      margin-top: 10px;
+                      width: 100%;
+                      gap:0px 20px;
+                      .input-wrapper{
+                        width: 100%;
+                        height: 125px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 69px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 69px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                
+                      .error{   
+                        height:20px;
+                        width: 100%;
+                        visibility: hidden;
+                    
+                        p{
+                         letter-spacing: 0.5px;
+                         padding-left: 3%;
+                         color: red;
+                        }
+                        
+                     
+                     
+                    }
+                    .first-welcome-box{
+                     
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin:5px 0px 20px 0px;
+               
+                      .welcome-box1{
+                        width: 85%;
+                        height: 85px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                       
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 20px;
+                          padding-top: 10px;
+                        }
+                        p{
+                          font-size: 1.2em;
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 166px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:none; //flex  
+                      justify-content: center;
+                      align-items: center;
+                      margin:10px 0px 0px 0px;
+                      .welcome-box2{
+                        width: 86%;
+                        height: 80px;
+                        //background-color: #ccc;
+                        display: flex;
+                        color:white;
+                        .bmi-result{
+                          width: 50%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: end;
+                            span {
+                              font-size: 5em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                             // overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 50%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+            }
+            
+          }
+         
+        }
+    }
+    main{
+          
+      width: 100%;
+      min-height: 2100px;
+     // background-color: aqua;
+      display: grid;
+      justify-items: center;
+      gap:60px 0px;
+      margin-top: 50px;
+     position: relative;
+      .first-main-content{
+        width: 90%;
+        min-height: 533px;
+        display: flex;
+      //  background-color: #a6adca;
+        gap:0px 5%;
+        position: relative;
+        margin-top: 5px;
+        .fig-maneat{
+          width:50%;
+          height: 100%;
+          display: grid;
+          align-items: end;
+          img{
+           width: 100%;
+           height: 100.5%;
+          }
+        }
+        .curved-line-left{
+          display: none;
+          
+        }
+        .bmi-means{
+         width: 45%;
+        display: flex;
+        align-items: start;
+        padding-left: 2.5%;
+        
+         .bmi-mean-box{
+          position: relative;
+          height: 65%;
+          padding-top:20px;
+          h1{
+            font-size: 3em;
+            line-height: 1.1;
+            margin-bottom: 35px;
+           
+         }
+         p{
+          font-size:1.4em;
+          padding:0px 10px 30px 0px;
+         }
+         }
+         
+        }
+      }
+
+      .snd-main-content{
+        height: 503px;
+        width: 100%;
+       background-color: rgb(246,250,255);
+     // background-color: rgb(220, 156, 156);
+       border-radius: 30px;
+        display: flex;
+        justify-content: center;
+         align-items: center;
+    
+          .list-todo{
+            width: 90%;
+            height: 410px;
+         //   background-color: aquamarine;
+            display:grid;
+            gap:30px 40px;
+            padding-left: 0px;
+            align-items: center;
+            .healthy{
+              display:flex;
+              gap:0px 10%;
+              align-items: center;
+              h1{
+                font-size: 2em;
+                margin:5px 0px 5px 0px;
+              }
+              p{
+                height: 110%;
+                @include para-style();
+              }
+            }
+            .healthy:last-child{
+              p{
+                padding-right: 10%;
+              }
+            }
+          }
+      }
+
+      .third-main-content{
+        height: 900px;
+        width: 98%;
+       // background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px 0px 0px;
+
+        .limit-container{
+          position: relative;
+            width: 84%;
+            min-height: 920px;
+           // background-color: antiquewhite;
+            margin-bottom: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-row: 1fr 1fr 1fr 1fr;
+            gap:50px 25px;
+            .curved-line-right{
+               display: none;              
+            }
+            .limitation-bmi{
+              width: 100%;
+              grid-column: 1/5;
+             
+              grid-row: 1/2;
+              display: block;
+            .limitation-box{
+              height: 140px;
+             display: grid;
+              justify-items: center;
+           //   background-color: red;
+              width: 100%;
+              h2{
+                font-size:2.5em;
+                font-weight: bold;
+              }
+              p{
+                text-align: center;
+                margin-top: 0px;
+                @include para-style();
+              }
+            }
+            }
+            .gender-box{
+              @include box-style();
+              grid-column: 1/3;
+              grid-row: 2/3;
+             
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+             
+              //margin-top: 20px;
+            }
+            .age-box{
+              grid-column:3/5;
+              grid-row: 2/3;
+              display: grid;
+           
+              .gender{
+                @include card-style();
+              }
+              
+              //margin-top: 20px;
+            }
+            
+            .muscle-box{
+              grid-column: 1/3;
+              grid-row:3/4;
+              display: grid;
+              .gender{
+                @include card-style();
+              
+              }
+            }
+            .pregnancy-box{
+
+              grid-column: 3/5;
+              grid-row:3/4;
+              display: grid;
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+            }
+            .race-box{
+              grid-column:2/4;
+              grid-row: 4/5;
+              display: grid;
+    
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+              //margin-top: 20px;
+            }
+        }
+      }
+     
+    }
+    .footer{
+        display: none;
+    }
+    } 
+   
+  
+  }
+ 
+  
+  @media screen and  (max-width: 768px) {
+
+    .container{
+      header{
+        width: 100%;
+        height: 850px;
+     // background-color: red;
+        .head-container{
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-items: center;
+          
+          .first-header{
+            width: 100%;
+            position: relative;
+            grid-column: 1/2;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            height: 81%;
+            .header-content-wrapper{
+              grid-column: 1/2;
+              justify-items: center;
+              width: 90%;
+              height: 302px;
+              margin: 5% 0 0 0%;
+              
+                .circle{
+                    margin-bottom:40px;
+                    display: grid;
+                    justify-content: center;
+                }
+                .header-content{
+                  display: grid;
+                  justify-items: center;
+                  h1{
+                     
+                      line-height:1.2;
+                      margin-bottom: 30px;
+                      text-align: center;
+                      font-size: 3.5em;
+                  }
+                  .first-paragraph{
+                    width: 100%;
+                    p{
+                      @include para-style();
+                     text-align: center;
+                    }
+                  }
+                }
+            }
+            .calculator{                
+              grid-column: 1/2;
+              width:90% ;
+              min-height: 500px; //484
+              background-color: white;
+              position:relative;
+              //left:65%;
+              top:0%;
+              display: grid;
+              justify-items: center;
+              align-items: center;
+              margin-top: 40px;
+               .calculator-wrapper{
+                width: 88%;
+                min-height: 89%;
+                background-color:transparent;
+                display: flex;
+                margin:23px 0px 25px 0px;
+                .details{
+                  position: relative;
+                  min-width:100%;
+                  min-height: 200px;
+                  padding-top: 10px;
+               //  background-color: bisque;
+                    h3{
+                      font-size: 1.7em;
+                    }
+
+                    .radio-list{
+                      width: 67%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:35px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: start;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                      }
+                      .custom-radio {
+                        height: 25px; 
+                        width: 25px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                       
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1.3em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:flex;
+                      justify-content: space-between;
+                      margin: 35px 0px 4px 0px;
+                      width: 100%;
+                      gap:0px 20px;
+                      .input-wrapper{
+                        width: 100%;
+                        height: 105px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 69px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 69px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                    .error{   
+                       height:20px;
+                       width: 100%;
+                       visibility: hidden;
+                       p{
+                        letter-spacing: 0.5px;
+                        padding-left: 3%;
+                        color: red;
+                       }
+                       
+                    
+                    }
+                    .first-welcome-box{
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-top: 10px 0px 0px 0px;
+                      
+                      .welcome-box1{
+                        width: 85%;
+                        height: 85px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 20px;
+                          padding-top: 10px;
+                        }
+                        p{
+                          font-size: 1.2em;
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:none;  
+                      justify-content: center;
+                      align-items: center;
+                      margin-top: 10px;
+                      .welcome-box2{
+                        width: 90%;
+                        height: 80px;
+                        //background-color: #ccc;
+                        display: flex;
+                        color:white;
+                        .bmi-result{
+                          width: 50%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 70%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: end;
+                            span {
+                              font-size: 3.5em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                              overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 50%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+              .calculator-wrapper1{
+                width: 88%;
+                min-height: 89%;
+                background-color:rgb(254, 254, 254);
+                display: none;
+                .details{
+                  position: relative;
+                  min-width:100%;
+                  min-height: 400px;
+                  padding-top: 10px;
+                 //background-color: bisque;
+                    h3{
+                      font-size: 1.7em;
+                    }
+
+                    .radio-list{
+                      width: 73%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:35px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: start;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                      }
+                      .custom-radio {
+                        height: 25px; 
+                        width: 25px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1.3em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:flex;
+                      justify-content: space-between;
+                      margin-top: 10px;
+                      width: 100%;
+                      gap:0px 20px;
+                      .input-wrapper{
+                        width: 100%;
+                        height: 125px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 69px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 69px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                
+                      .error{   
+                        height:20px;
+                        width: 100%;
+                        visibility: hidden;
+                    
+                        p{
+                         letter-spacing: 0.5px;
+                         padding-left: 3%;
+                         color: red;
+                        }
+                        
+                     
+                     
+                    }
+                    .first-welcome-box{
+                     
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin:5px 0px 20px 0px;
+               
+                      .welcome-box1{
+                        width: 85%;
+                        height: 85px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                       
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 20px;
+                          padding-top: 10px;
+                        }
+                        p{
+                          font-size: 1.2em;
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 166px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:none; //flex  
+                      justify-content: center;
+                      align-items: center;
+                      margin:10px 0px 30px 0px;
+                      .welcome-box2{
+                        width: 86%;
+                        height: 80px;
+                        //background-color: #ccc;
+                        display: flex;
+                        color:white;
+                        .bmi-result{
+                          width: 50%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: end;
+                            span {
+                              font-size: 5em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                             // overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 50%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+            }
+            
+          }
+         
+        }
+    }
+    main{
+          
+      width: 100%;
+      min-height:2100px;
+     //background-color: aqua;
+      display: grid;
+      justify-items: center;
+      gap:60px 0px;
+      margin-top: 50px;
+     position: relative;
+      .first-main-content{
+        width: 90%;
+        min-height: 533px;
+        display: flex;
+      //  background-color: #a6adca;
+        gap:0px 5%;
+        position: relative;
+        margin-top: 5px;
+        .fig-maneat{
+          width:50%;
+          height: 100%;
+          display: grid;
+          align-items: end;
+          img{
+           width: 100%;
+           height: 100.5%;
+          }
+        }
+        .curved-line-left{
+          display: none;
+          
+        }
+        .bmi-means{
+         width: 45%;
+        display: flex;
+        align-items: start;
+        padding-left: 2.5%;
+        
+         .bmi-mean-box{
+          position: relative;
+          height: 65%;
+          padding-top:20px;
+          h1{
+            font-size: 3em;
+            line-height: 1.1;
+            margin-bottom: 35px;
+           
+         }
+         p{
+          font-size:1.4em;
+          padding:0px 10px 30px 0px;
+         }
+         }
+         
+        }
+      }
+
+      .snd-main-content{
+        height: 503px;
+        width: 100%;
+       background-color: rgb(246,250,255);
+     // background-color: rgb(220, 156, 156);
+       border-radius: 30px;
+        display: flex;
+        justify-content: center;
+         align-items: center;
+    
+          .list-todo{
+            width: 90%;
+            height: 410px;
+         //   background-color: aquamarine;
+            display:grid;
+            gap:30px 40px;
+            padding-left: 0px;
+            align-items: center;
+            .healthy{
+              display:flex;
+              gap:0px 10%;
+              align-items: center;
+              h1{
+                font-size: 2em;
+                margin:5px 0px 5px 0px;
+              }
+              p{
+                height: 110%;
+                @include para-style();
+              }
+            }
+            .healthy:last-child{
+              p{
+                padding-right: 10%;
+              }
+            }
+          }
+      }
+
+      .third-main-content{
+        min-height: 963px;
+        width: 98%;
+      // /  background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px 0px 0px;
+        padding-bottom: 100px;
+        .limit-container{
+          position: relative;
+            width: 84%;
+            min-height: 1100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-row: 1fr 1fr 1fr 1fr;
+            gap:50px 25px;
+            //background-color: antiquewhite;
+            .curved-line-right{
+               display: none;              
+            }
+            .limitation-bmi{
+              width: 100%;
+              grid-column: 1/5;
+             
+              grid-row: 1/2;
+              display: block;
+            .limitation-box{
+              height: 140px;
+             display: grid;
+              justify-items: center;
+           //   background-color: red;
+              width: 100%;
+              h2{
+                font-size:2.5em;
+                font-weight: bold;
+              }
+              p{
+                text-align: center;
+                margin-top: 0px;
+                @include para-style();
+              }
+            }
+            }
+            .gender-box{
+              @include box-style();
+              grid-column: 1/3;
+              grid-row: 2/3;
+             
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+             
+              //margin-top: 20px;
+            }
+            .age-box{
+              grid-column:3/5;
+              grid-row: 2/3;
+              display: grid;
+           
+              .gender{
+                @include card-style();
+              }
+              
+              //margin-top: 20px;
+            }
+            
+            .muscle-box{
+              grid-column: 1/3;
+              grid-row:3/4;
+              display: grid;
+              .gender{
+                @include card-style();
+              
+              }
+            }
+            .pregnancy-box{
+
+              grid-column: 3/5;
+              grid-row:3/4;
+              display: grid;
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+            }
+            .race-box{
+              grid-column:2/4;
+              grid-row: 4/5;
+              display: grid;
+           
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+              //margin-top: 20px;
+            }
+        }
+      }
+     
+    }
+    .footer{
+        display: none;
+    }
+    } 
+   
+  
+  }
+
+  @media screen and  (max-width:481px) {
+
+    .container{
+      header{
+        width: 100%;
+        min-height: 950px;
+     // background-color: red;
+     margin-bottom: 0px;
+        .head-container{
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-items: center;
+          
+          .first-header{
+            width: 100%;
+            height: 72%;
+            position: relative;
+            grid-column: 1/2;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            margin-bottom: 100px;
+            .header-content-wrapper{
+              grid-column: 1/2;
+              justify-items: center;
+              width: 90%;
+              height:100%;
+              margin: 5% 0 0 0%;
+             
+                .circle{
+                    margin-bottom:40px;
+                    display: grid;
+                    justify-content: center;
+                }
+                .header-content{
+                  display: grid;
+                  justify-items: center;
+                  h1{
+                     
+                      line-height:1.2;
+                      margin-bottom: 30px;
+                      text-align: center;
+                      font-size: 3.5em;
+                  }
+                  .first-paragraph{
+                    width: 100%;
+                    p{
+                      @include para-style();
+                     text-align: center;
+                    }
+                  }
+                }
+            }
+            .calculator{                
+              grid-column: 1/2;
+              width:90% ;
+              min-height: 520px; //484
+              background-color: white;
+              position:relative;
+              //left:65%;
+              top:0%;
+              display: grid;
+              justify-items: center;
+              align-items: center;
+              margin-top: 40px;
+               .calculator-wrapper{
+                width: 88%;
+                height: 95%;
+               // background-color:rgb(166, 109, 109);
+                display: flex;
+                margin:23px 0px 0px 0px;
+                .details{
+                  position: relative;
+                  width:100%;
+                  height: 100%;
+                 // margin-top: 100px;
+               // background-color: rgb(196, 255, 197);
+                    h1{
+                      font-size: 1.4em;
+                     
+                    }
+
+                    .radio-list{
+                      width: 67%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:15px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: end;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                          gap:0px 0px;
+                      }
+
+                      .custom-radio {
+                        height: 20px; 
+                        width: 20px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio::before{
+                        content:none;
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                       
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                              
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:grid;
+                     justify-content:start;
+                      margin: 35px 0px 4px 0px;
+                      min-width: 100%;
+                      gap:0px 20px;
+                    //  background-color: antiquewhite;
+                      .input-wrapper{
+                        position: relative;
+                        width: 100%;
+                        height: 105px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 50px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 50px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                    .error{   
+                       height:20px;
+                       width: 100%;
+                       visibility: hidden;
+                       p{
+                        letter-spacing: 0.5px;
+                        padding-left: 3%;
+                        color: red;
+                       }
+                       
+                    
+                    }
+                    .first-welcome-box{
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 20px 20px 20px 20px;
+                      display:flex;
+                      justify-items: center;
+                      align-items: center;
+                      margin-top: 10px 0px 0px 0px;
+                  
+                      .welcome-box1{
+                        width: 85%;
+                        min-height: 105px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 0px;
+                          padding-top: 0px;
+                        }
+                        p{
+                          font-size: 1em;
+                    
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 250px;
+                      background-color: #345FF6;
+                      border-radius: 20px 20px 20px 20px;
+                      display:none; 
+                      justify-items: center;
+                      align-items: center;
+                      margin-top: 10px;
+                    //  margin-bottom: 100px;
+                      .welcome-box2{
+                        width: 80%;
+                        height: 70%;
+                     //   background-color: antiquewhite;
+                     
+                        //background-color: #ccc;
+                        display: grid;
+                        justify-items: center;
+                        align-items: center;
+                        color:white;
+                        .bmi-result{
+                          width: 100%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 70%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: start;
+                            span {
+                              font-size: 4.5em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                              overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 100%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+              .calculator-wrapper1{
+                width: 88%;
+                min-height: 89%;
+                background-color:rgb(254, 254, 254);
+                display: none;
+                .details{
+                  position: relative;
+                  min-width:100%;
+                  min-height: 400px;
+                  padding-top: 10px;
+                 //background-color: bisque;
+                    h3{
+                      font-size: 1.7em;
+                    }
+
+                    .radio-list{
+                      width: 73%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:35px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: start;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                      }
+                      .custom-radio {
+                        height: 25px; 
+                        width: 25px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1.3em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:flex;
+                      justify-content: space-between;
+                      margin-top: 10px;
+                      width: 100%;
+                      gap:0px 20px;
+                      .input-wrapper{
+                        width: 100%;
+                        height: 125px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 69px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 69px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                
+                      .error{   
+                        height:20px;
+                        width: 100%;
+                        visibility: hidden;
+                    
+                        p{
+                         letter-spacing: 0.5px;
+                         padding-left: 3%;
+                         color: red;
+                        }
+                        
+                     
+                     
+                    }
+                    .first-welcome-box{
+                     
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin:5px 0px 20px 0px;
+               
+                      .welcome-box1{
+                        width: 85%;
+                        height: 85px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                       
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 20px;
+                          padding-top: 10px;
+                        }
+                        p{
+                          font-size: 1.2em;
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 166px;
+                      background-color: #345FF6;
+                      border-radius: 10px 10px 10px 10px;
+                      display:none; //flex  
+                      justify-content: center;
+                      align-items: center;
+                      margin:10px 0px 30px 0px;
+                      .welcome-box2{
+                        width: 86%;
+                        height: 80px;
+                        //background-color: #ccc;
+                        display: flex;
+                        color:white;
+                        .bmi-result{
+                          width: 50%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: end;
+                            span {
+                              font-size: 5em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                             // overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 50%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+            }
+            
+          }
+         
+        }
+    }
+    main{
+          
+      width: 100%;
+      height: 560px;
+      //background-color: aqua;
+      display: grid;
+      justify-items: center;
+      gap:60px 0px;
+      padding: 0px 0px 0px 0px;
+     position: relative;
+    
+      .first-main-content{
+        width: 100%;
+        min-height: 533px;
+        display: grid;
+      //  background-color: #a6adca;
+      //  gap:0% 0%;
+        position: relative;
+        margin-top: 5px;
+        .fig-maneat{
+          width:100%;
+          height: 100%;
+          display: grid;
+          align-items: center;
+          img{
+           width: 100%;
+           height: 100%;
+          }
+        }
+        .curved-line-left{
+          display: none;
+          
+        }
+        .bmi-means{
+         width: 100%;
+         padding-left:0%;
+        display: grid;
+        align-items: start;
+        justify-items: center;
+      
+        //background-color: aquamarine;
+         .bmi-mean-box{
+         // background-color: antiquewhite;
+          width: 90%;
+          position: relative;
+          height: 100%;
+          padding-top:20px;
+          display: grid;
+          justify-items: center;
+          h1{
+            font-size: 2.2em;
+            line-height: 1.1;
+            margin-bottom: 35px;
+         }
+         p{
+          font-size:1.2em;
+          padding:0px 0px 10px 0px;
+         
+         }
+         }
+         
+        }
+      }
+
+      .snd-main-content{
+        min-height: 850px;
+        width: 100%;
+       background-color: rgb(246,250,255);
+     // background-color: rgb(220, 156, 156);
+       border-radius: 30px;
+       margin-top: 100px;
+        display: flex;
+        justify-content: center;
+         align-items: center;
+    
+          .list-todo{
+            width: 90%;
+            height: 90%;
+           // background-color: aquamarine;
+            display:grid;
+            gap:0px 0px;
+            padding-left: 0px;
+            align-items: center;
+            .healthy{
+              display:grid;
+              gap:0px 10%;
+              align-items: center;
+              h1{
+                font-size: 2em;
+                margin:5px 0px 5px 0px;
+              }
+              p{
+                height: 110%;
+                @include para-style();
+              }
+            }
+            .healthy:last-child{
+              p{
+                padding-right: 10%;
+              }
+            }
+          }
+      }
+
+      .third-main-content{
+        min-height: 1450px;
+        width: 98%;
+     //   background-color: #841c1c;
+        display: flex;
+        justify-content: center;
+        margin: 0px 0px 00px 0px;
+
+        .limit-container{
+          position: relative;
+            width: 84%;
+            height: 100%;
+          // background-color: aqua;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap:50px 25px;
+           
+            .curved-line-right{
+               display: none;              
+            }
+            .limitation-bmi{
+              width: 100%;
+              grid-column: 1/2;
+              grid-row: 1/2;
+              display: block;
+            .limitation-box{
+              min-height: 250px;
+             display: grid;
+              justify-items: center;
+           //   background-color: red;
+              width: 100%;
+              h2{
+                font-size:2em;
+                font-weight: bold;
+              }
+              p{
+                text-align: center;
+                margin-top: 0px;
+                @include para-style();
+              }
+            }
+            }
+            .gender-box{
+              @include box-style();
+              grid-column: 1/2;
+              grid-row: 3/4;
+             
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+             
+              //margin-top: 20px;
+            }
+            .age-box{
+              grid-column:1/2;
+              grid-row:4/5;
+              display: grid;
+           
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+              
+              //margin-top: 20px;
+            }
+            
+            .muscle-box{
+              grid-column: 1/2;
+              grid-row:5/6;
+              display: grid;
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+            }
+            .pregnancy-box{
+
+              grid-column: 1/2;
+              grid-row:6/7;
+              display: grid;
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+            }
+            .race-box{
+              grid-column:1/2;
+              grid-row: 7/8;
+              display: grid;
+    
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+              //margin-top: 20px;
+            }
+        }
+      }
+     
+    }
+    .footer{
+        display: none;
+    }
+    } 
+   
+  
+  }
+
+  @media screen and  (max-width:320px) {
+
+    .container{
+      header{
+        width: 100%;
+        min-height: 950px;
+     // background-color: red;
+     margin-bottom:150px;
+        .head-container{
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-items: center;
+          
+          .first-header{
+            width: 100%;
+            height: 72%;
+            position: relative;
+            grid-column: 1/2;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            //margin-bottom: 200px;
+            .header-content-wrapper{
+              grid-column: 1/2;
+              justify-items: center;
+              width: 90%;
+              height:100%;
+              margin: 5% 0 0 0%;
+             
+                .circle{
+                    margin-bottom:40px;
+                    display: grid;
+                    justify-content: center;
+                }
+                .header-content{
+                  display: grid;
+                  justify-items: center;
+                  h1{
+                     
+                      line-height:1.2;
+                      margin-bottom: 30px;
+                      text-align: center;
+                      font-size: 3.5em;
+                  }
+                  .first-paragraph{
+                    width: 100%;
+                    p{
+                      @include para-style();
+                     text-align: center;
+                    }
+                  }
+                }
+            }
+            .calculator{                
+              grid-column: 1/2;
+              width:90% ;
+              min-height: 510px; //484
+              background-color: white;
+              position:relative;
+              //left:65%;
+              top:0%;
+              display: grid;
+              justify-items: center;
+              align-items: center;
+              margin-top: 40px;
+
+               .calculator-wrapper{
+                width: 75%;
+                height: 95%;
+               // background-color:rgb(166, 109, 109);
+                display: flex;
+                margin:23px 0px 0px 0px;
+                
+                .details{
+                  position: relative;
+                  width:100%;
+                  height: 100%;
+                 // margin-top: 100px;
+               // background-color: rgb(196, 255, 197);
+                    h1{
+                      font-size: 1.2em;
+                     
+                    }
+
+                    .radio-list{
+                      width: 67%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:15px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: end;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                          gap:0px 0px;
+                      }
+
+                      .custom-radio {
+                        height: 20px; 
+                        width: 20px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio::before{
+                        content:none;
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                       
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                              
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:grid;
+                      justify-content: space-between;
+                      margin: 35px 0px 4px 0px;
+                      width: 100%;
+                      gap:0px 20px;
+                     // background-color: antiquewhite;
+                      .input-wrapper{
+                        position: relative;
+                        width: 100%;
+                        height: 105px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 50px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 50px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                    .error{   
+                       height:20px;
+                       width: 100%;
+                       visibility: hidden;
+                       p{
+                        letter-spacing:0.1px;
+                        padding-left: 3%;
+                        color: red;
+                        font-size: 0.9em;
+                       }
+                       
+                    
+                    }
+                    .first-welcome-box{
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 20px 20px 20px 20px;
+                      display:flex;
+                      justify-items: center;
+                      align-items: center;
+                      margin-top: 10px 0px 0px 0px;
+                  
+                      .welcome-box1{
+                        width: 85%;
+                        min-height: 105px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 0px;
+                          padding-top: 0px;
+                        }
+                        p{
+                          font-size: 1em;
+                    
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 250px;
+                      background-color: #345FF6;
+                      border-radius: 20px 20px 20px 20px;
+                      display:none; 
+                      justify-items: center;
+                      align-items: center;
+                      margin-top: 10px;
+                    //  margin-bottom: 100px;
+                      .welcome-box2{
+                        width: 80%;
+                        height: 70%;
+                     //   background-color: antiquewhite;
+                     
+                        //background-color: #ccc;
+                        display: grid;
+                        justify-items: center;
+                        align-items: center;
+                        color:white;
+                        .bmi-result{
+                          width: 100%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 70%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: start;
+                            span {
+                              font-size: 3em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                              overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 100%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1.2em;
+                              line-height: 1.2;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+              .calculator-wrapper1{
+                width: 88%;
+                min-height: 89%;
+                background-color:rgb(254, 254, 254);
+                display: none;
+                .details{
+                  position: relative;
+                  min-width:100%;
+                  min-height: 400px;
+                  padding-top: 10px;
+                 //background-color: bisque;
+                    h3{
+                      font-size: 1.7em;
+                    }
+
+                    .radio-list{
+                      width: 73%;
+                      height: 25px;
+                     // background-color: aqua;
+                      display: flex;
+                      justify-content:space-between;
+                      align-items: center;
+                      margin-top:35px;
+                      .custom-radio-label {
+                        position: relative;
+                        cursor: pointer;
+                        display: flex;
+                        height: 25px;
+                        width: 100px;
+                        justify-items: start;
+                        align-items: center;
+                        input[type="radio"] {
+                          display: none;  //opacity: 0; also can. but it's space still there.
+                          cursor: pointer;
+                      }
+                      .custom-radio {
+                        height: 25px; 
+                        width: 25px; 
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                      .custom-radio:hover{
+                              border: 1px solid #345FF6;
+                          }
+                        .custom-radio::before{
+                          position: absolute;
+                          content: "";
+                          height: 10px;
+                          width:10px;
+                          border-radius: 50%;
+                        }
+
+                       
+                        .label-text{
+                                font-size: 1.3em;
+                                position: relative;
+                                cursor: pointer;
+                                font-weight: bold;
+                              }
+                             
+                    input[type="radio"]:checked + .custom-radio::before {
+                      background-color: #345FF6; /* Change the color when checked */
+                      border: 1px solid #345FF6; /* Change the color of the border when checked */
+                      box-shadow: 0px 0px 1px 7px rgb(225, 231, 254);
+                     }
+              
+                    }
+                  }
+                    .body-measure{
+                      display:flex;
+                      justify-content: space-between;
+                      margin-top: 10px;
+                      width: 100%;
+                      gap:0px 20px;
+                      .input-wrapper{
+                        width: 100%;
+                        height: 125px;
+                        //background-color: aquamarine;
+                        
+                        .hei-wei{
+                          font-size: 1.4em;
+                          color:#5E6E85;
+                       
+                        }
+
+                        .input-boxes{
+                          display: flex;
+                          position: relative;
+                          width:100%;
+                          height: 69px;
+                          //background-color: black;
+                          align-items: center;
+                          padding: 25px 0px 10px 0px;
+                          .body-input{
+                            width: 100%;
+                            height: 69px;
+                            border-radius:12px;
+                            border: 1px solid rgb(216, 226, 231);
+                            padding-left:10%;
+                            font-size: 2em;
+                            outline:0;
+                          }
+                          .body-input:hover {
+                            border: 1.5px solid #345FFE;
+                        }
+                        
+                          .icon{
+                            position: absolute;
+                            right:0;
+                            font-size: 2em;
+                            color: #345FF6;
+                            padding-right: 10%;
+                          }
+                        }
+                      }
+                         
+                    }
+                
+                      .error{   
+                        height:20px;
+                        width: 100%;
+                        visibility: hidden;
+                    
+                        p{
+                         letter-spacing: 0.5px;
+                         padding-left: 3%;
+                         color: red;
+                        }
+                        
+                     
+                     
+                    }
+                    .first-welcome-box{
+                     
+                      width: 100%;
+                      height: 130px;
+                      background-color: #345FF6;
+                      border-radius: 10px 80px 80px 10px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin:5px 0px 20px 0px;
+               
+                      .welcome-box1{
+                        width: 85%;
+                        height: 85px;
+                        display: grid;
+                        align-items: center;
+                        //background-color: #ccc;
+                        color:white;
+                       
+                        h3{
+                          //margin-top: 7px;
+                          margin-bottom: 20px;
+                          padding-top: 10px;
+                        }
+                        p{
+                          font-size: 1.2em;
+                        }
+                      }
+                    
+                    }
+                    .snd-welcome-box{
+                      width: 100%;
+                      height: 166px;
+                      background-color: #345FF6;
+                      border-radius: 10px 10px 10px 10px;
+                      display:none; //flex  
+                      justify-content: center;
+                      align-items: center;
+                      margin:10px 0px 30px 0px;
+                      .welcome-box2{
+                        width: 86%;
+                        height: 80px;
+                        //background-color: #ccc;
+                        display: flex;
+                        color:white;
+                        .bmi-result{
+                          width: 50%;
+                          label{
+                            margin-top: 7x;
+                            height: 25%;
+                            font-size: 1.2em;
+                            display:block;
+                            font-weight: bold;
+                          }
+                          .result-box{
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 75%;      
+                           // background-color: aqua;
+                            display: flex;
+                            align-items: end;
+                            span {
+                              font-size: 3em;
+                              height:100%;
+                              width: 100%;
+                              //background-color: beige;
+                              display: flex;
+                              align-items: end;
+                             // justify-content: center;
+                              line-height: 50px; /* Adjust this value based on your container height */
+                             // overflow: hidden;
+                          }
+                          }
+                        }
+                        .bmi-info{
+                          width: 50%;
+                         // background-color: antiquewhite;
+                          display: flex;
+                          align-items: end;
+                          .bmi-suggest{
+                            width:85%;
+                            height: 90%;
+                           // background-color: aqua;
+                            p{
+                              font-size: 1em;
+                              line-height: 1.4;
+                            }
+                          }
+                        }
+                        
+                       
+                      }
+                    }
+                }
+                    
+              }
+            }
+            
+          }
+         
+        }
+    }
+    main{
+          
+      width: 100%;
+      height: 533px;
+     // background-color: aqua;
+      display: grid;
+      justify-items: center;
+      gap:60px 0px;
+     // margin-top: 0px;
+     position: relative;
+      .first-main-content{
+        width: 100%;
+        min-height: 533px;
+        display: grid;
+      //  background-color: #a6adca;
+      //  gap:0% 0%;
+        position: relative;
+        margin-top: 5px;
+        .fig-maneat{
+          width:100%;
+          height: 100%;
+          display: grid;
+          align-items: center;
+          img{
+           width: 100%;
+           height: 100%;
+          }
+        }
+        .curved-line-left{
+          display: none;
+          
+        }
+        .bmi-means{
+         width: 100%;
+         padding-left:0%;
+        display: grid;
+        align-items: start;
+        justify-items: center;
+      
+        //background-color: aquamarine;
+         .bmi-mean-box{
+         // background-color: antiquewhite;
+          width: 90%;
+          position: relative;
+          height: 100%;
+          padding-top:20px;
+          display: grid;
+          justify-items: center;
+          h1{
+            font-size: 2.2em;
+            line-height: 1.1;
+            margin-bottom: 35px;
+         }
+         p{
+          font-size:1.2em;
+          padding:0px 0px 10px 0px;
+         
+         }
+         }
+         
+        }
+      }
+
+      .snd-main-content{
+        min-height: 850px;
+        width: 100%;
+       background-color: rgb(246,250,255);
+     // background-color: rgb(220, 156, 156);
+       border-radius: 30px;
+       margin-top: 100px;
+        display: flex;
+        justify-content: center;
+         align-items: center;
+    
+          .list-todo{
+            width: 90%;
+            height: 90%;
+           // background-color: aquamarine;
+            display:grid;
+            gap:0px 0px;
+            padding-left: 0px;
+            align-items: center;
+            .healthy{
+              display:grid;
+              gap:0px 10%;
+              align-items: center;
+              h1{
+                font-size: 2em;
+                margin:5px 0px 5px 0px;
+              }
+              p{
+                height: 110%;
+                @include para-style();
+              }
+            }
+            .healthy:last-child{
+              p{
+                padding-right: 10%;
+              }
+            }
+          }
+      }
+
+      .third-main-content{
+        min-height: 1750px;
+        width: 98%;
+       // background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        margin: 0px 0px 100px 0px;
+
+        .limit-container{
+          position: relative;
+            width: 84%;
+            height: 100%;
+          // background-color: aqua;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row: repeat(8,1fr);
+            gap:50px 25px;
+           
+            .curved-line-right{
+               display: none;              
+            }
+            .limitation-bmi{
+              width: 100%;
+              grid-column: 1/2;
+              grid-row: 1/2;
+              display: block;
+            .limitation-box{
+              min-height: 250px;
+             display: grid;
+              justify-items: center;
+           //   background-color: red;
+              width: 100%;
+              h2{
+                font-size:2em;
+                font-weight: bold;
+              }
+              p{
+                text-align: center;
+                margin-top: 0px;
+                @include para-style();
+              }
+            }
+            }
+            .gender-box{
+              @include box-style();
+              grid-column: 1/2;
+              grid-row: 3/4;
+             
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+             
+              //margin-top: 20px;
+            }
+            .age-box{
+              grid-column:1/2;
+              grid-row:4/5;
+              display: grid;
+           
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+              
+              //margin-top: 20px;
+            }
+            
+            .muscle-box{
+              grid-column: 1/2;
+              grid-row:5/6;
+              display: grid;
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+            }
+            .pregnancy-box{
+
+              grid-column: 1/2;
+              grid-row:6/7;
+              display: grid;
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+            }
+            .race-box{
+              grid-column:1/2;
+              grid-row: 7/8;
+              display: grid;
+    
+              .gender{
+                @include card-style();
+                padding: 15px 0px 15px 0px;
+              }
+              //margin-top: 20px;
+            }
+        }
+      }
+     
+    }
+    .footer{
+        display: none;
+    }
+    } 
+   
+  
+  }
+  
+ 
+  
